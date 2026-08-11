@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/Elie-and-Christine",
+      "destination": "/"
+    },
+    {
+      "source": "/((?!api|static|.*\\..*).*)",
+      "destination": "/"
+    }
+  ]
+}

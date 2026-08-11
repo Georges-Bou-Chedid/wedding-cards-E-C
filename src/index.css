@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Arabic:wght@300;400;500&family=Montserrat:wght@200;300;400;500;600&display=swap&family=Alex+Brush&display=swap&family=Pinyon+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 220 15% 18%;
+
+    --card: 40 15% 95%;
+    --card-foreground: 220 15% 18%;
+
+    --popover: 40 20% 97%;
+    --popover-foreground: 220 15% 18%;
+
+    /* Dusty Blue — Pantone 16-4010 TCX #8C9DAD */
+    --primary: 212 15% 62%;
+    --primary-foreground: 40 20% 97%;
+
+    --secondary: 212 12% 90%;
+    --secondary-foreground: 212 15% 30%;
+
+    --muted: 212 10% 88%;
+    --muted-foreground: 212 8% 50%;
+
+    --accent: 212 15% 55%;
+    --accent-foreground: 40 20% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 212 12% 82%;
+    --input: 212 12% 82%;
+    --ring: 212 15% 62%;
+
+    --radius: 0.5rem;
+
+    --dusty-blue: 212 15% 62%;
+    --dusty-blue-dark: 212 18% 54%;
+    --dusty-blue-darker: 212 20% 46%;
+    --dusty-blue-pale: 212 12% 85%;
+    --cream: 40 20% 97%;
+    --cream-dark: 38 15% 90%;
+    --warm-beige: 36 18% 88%;
+    --ivory: 45 25% 96%;
+    --gold: 38 55% 55%;
+    --gold-light: 38 45% 70%;
+    --navy: 220 55% 18%;
+    --toile: 212 15% 62%;
+    --toile-light: 212 12% 80%;
+    --toile-dark: 212 20% 42%;
+
+    --font-display: 'Great Vibes', cursive;
+    --font-heading: 'Cormorant Garamond', serif;
+    /* Amelia-style font — high-contrast Didone serif, used for couple names */
+    --font-amelia: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    --font-body: 'Lora', serif;
+    --font-arabic: 'Noto Serif Arabic', serif;
+    --font-arabic2: 'Waseem', Verdana, sans-serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-script: 'Pinyon Script', cursive;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-arabic {
+    font-family: var(--font-arabic);
+  }
+  .font-amelia {
+    font-family: var(--font-amelia);
+  }
+  .font-arabic2 {
+    font-family: var(--font-arabic2);
+  }
+  .font-sans-light {
+    font-family: var(--font-sans);
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  /* Embossed floral text effect */
+  .text-embossed {
+    text-shadow:
+      0 1px 2px rgba(255,255,255,0.25),
+      0 -1px 1px rgba(0,0,0,0.15);
+  }
+
+  /* Ornamental divider */
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .ornament-line {
+    height: 1px;
+    width: 60px;
+    background: hsl(var(--dusty-blue-pale));
+  }
+  .ornament-diamond {
+    width: 6px;
+    height: 6px;
+    background: hsl(var(--dusty-blue));
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* Section fade-in animation */
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .animate-fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  /* Music bar animation */
+  @keyframes musicBar {
+    0%, 100% { transform: scaleY(0.4); }
+    50% { transform: scaleY(1); }
+  }
+  .music-bar {
+    animation: musicBar 0.9s ease-in-out infinite;
+  }
+  .music-bar-2 { animation-delay: 0.15s; }
+  .music-bar-3 { animation-delay: 0.3s; }
+  .music-bar-4 { animation-delay: 0.45s; }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  @keyframes hint-line {
+    0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+    50% { transform: scaleY(1); opacity: 1; }
+  }
+  .animate-hint-line {
+    animation: hint-line 2s ease-in-out infinite;
+  }
+}
