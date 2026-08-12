@@ -126,8 +126,8 @@ const TimelineStop = ({ event, index }: { event: TimelineEvent; index: number })
 };
 
 const StopCard = ({ event, align }: { event: TimelineEvent; align: "left" | "right" }) => (
-  <div className={`max-w-[280px] ${align === "right" ? "text-right sm:items-end" : "text-left sm:items-start"} flex flex-col`}>
-    {/* Polaroid-style photo */}
+  <div className={`max-w-[320px] ${align === "right" ? "text-right sm:items-end" : "text-left sm:items-start"} flex flex-col`}>
+    {/* Polaroid-style photo — bigger frame so the vertical source photos aren't over-cropped */}
     <div
       className="bg-white p-2 pb-8 shadow-lg rounded-[2px] mb-3"
       style={{ transform: align === "right" ? "rotate(-1.5deg)" : "rotate(1.5deg)" }}
@@ -135,7 +135,7 @@ const StopCard = ({ event, align }: { event: TimelineEvent; align: "left" | "rig
       <img
         src={event.photo}
         alt={event.title}
-        className="w-full h-40 sm:h-44 object-cover rounded-[1px]"
+        className="w-full h-56 sm:h-64 object-cover rounded-[1px]"
         style={{ objectPosition: event.photoPosition ?? "center" }}
         loading="lazy"
         decoding="async"

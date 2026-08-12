@@ -2,8 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Copy, Check } from "lucide-react";
 
-/* TODO: replace with the couple's real Whish money account number */
-const WHISH_ACCOUNT = "00-000000-000";
+const WHISH_ACCOUNT = "30695437-03";
 
 interface GiftRegistryProps {
   /** Tighter spacing/type scale for embedding inside another section (e.g. RSVP) */

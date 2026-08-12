@@ -17,13 +17,13 @@ import footerBg      from "@/assets/couple-sunset.webp";
 import coupleWalking from "@/assets/couple-walking.webp";
 import coupleBench   from "@/assets/couple-bench.webp";
 import coupleHands   from "@/assets/couple-hands.webp";
-import coupleVenue   from "@/assets/couple-venue.webp";
+import coupleVenue   from "@/assets/couple-venue2.webp";
 
 /*
  * ─── EVENT DETAILS ────────────────────────────────────────────────────────────
  */
 const COUPLE = { groom: "Elie", bride: "Christine" };
-const WEDDING_DATE_ISO = "2026-09-27T16:00:00";
+const WEDDING_DATE_ISO = "2026-09-26T16:00:00";
 const EVENTS = {
   groomHome: { mapHref: "https://maps.app.goo.gl/hDHh2ML1opzAhm1P7" },
   brideHome: { mapHref: "https://goo.gl/maps/f7JxVts1s2rhytk99?g_st=awb" },
@@ -102,16 +102,15 @@ const WeddingDetails = () => (
           <p
             className="font-arabic2 text-white leading-[2.2]"
             dir="rtl" lang="ar"
-            style={{ fontSize: "clamp(1.2rem,3.6vw,1.8rem)", lineHeight: "2.4",
+            style={{ fontSize: "clamp(1.05rem,3.2vw,1.6rem)", lineHeight: "2.4",
               letterSpacing: "0.02em", textShadow: "0 2px 12px rgba(0,0,0,0.45)" }}
           >
-            أَمَّا نَحنُ فإِنَّنا نُحِبّ،
-            لأَنَّه أَحَبَّنا قَبلَ أَن نُحِبَّه
+            "الحبُّ لا تُطفِئُهُ المياهُ الغزيرةُ، ولا تَغمُرُهُ الأنهارُ."
           </p>
         </FadeUp>
         <FadeUp delay={150}>
           <p className="font-arabic2 text-white/65 mt-3" dir="rtl" lang="ar" style={{ fontSize: "0.95rem" }}>
-            يوحنّا الأولى 4 : 19
+            سفر نشيد الأنشاد 8:‏7
           </p>
         </FadeUp>
       </div>
@@ -133,7 +132,7 @@ const WeddingDetails = () => (
           </p>
           <p
             className="text-muted-foreground italic"
-            style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "0.78rem" }}
+            style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(0.95rem,2.4vw,1.15rem)" }}
           >
             Father and Mother of the Groom
           </p>
@@ -157,7 +156,7 @@ const WeddingDetails = () => (
           </p>
           <p
             className="text-muted-foreground italic"
-            style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "0.78rem" }}
+            style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(0.95rem,2.4vw,1.15rem)" }}
           >
             Father and Mother of the Bride
           </p>
@@ -234,7 +233,7 @@ const WeddingDetails = () => (
           textShadow: "0 2px 20px rgba(0,0,0,0.35)",
           marginBottom: "1.5rem",
         }}>
-          27 September 2026
+          26 September 2026
         </p>
       </FadeUp>
 
@@ -273,30 +272,29 @@ const WeddingDetails = () => (
           title: "Venue",
           caption: "Zone, Mansourieh",
           photo: coupleVenue,
-          photoPosition: "center 15%",
           mapHref: EVENTS.venue.mapHref,
         },
       ]}
     />
 
-    {/* ── 5. WISH ACCOUNT — standalone, small, same photo as the header, heavily shaded ── */}
+    {/* ── 5. WISH ACCOUNT — standalone, small, solid background matching the countdown ── */}
     <FullBleed
-      src={heroBg}
-      fallbackColor="hsl(var(--dusty-blue-dark))"
-      overlay="rgba(250,247,242,0.88)"
+      src=""
+      fallbackColor="hsl(212,25%,16%)"
+      overlay="transparent"
       minH="auto"
-      bgPosition="center center"
     >
       <div className="py-12">
         <GiftRegistry
           compact
+          variant="onPhoto"
           coupleLabel={`${COUPLE.groom.toUpperCase()} & ${COUPLE.bride.toUpperCase()}`}
         />
       </div>
     </FullBleed>
 
     {/* ── 6. RSVP + CLOSING — photo visible throughout, no card ── */}
-    <FullBleed src={footerBg} fallbackColor="hsl(var(--dusty-blue-dark))" overlay="rgba(28,38,50,0.50)" minH="auto">
+    <FullBleed src={footerBg} fallbackColor="hsl(var(--dusty-blue-dark))" overlay="rgba(28,38,50,0.50)" minH="auto" bgPosition="center center">
       <div className="py-20">
         <RSVPForm variant="onPhoto" />
         <div className="max-w-lg mx-auto px-6">
@@ -332,7 +330,7 @@ const WeddingDetails = () => (
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.65 }}
           >
-            27 · 09 · 2026
+            26 · 09 · 2026
           </motion.p>
         </div>
       </div>

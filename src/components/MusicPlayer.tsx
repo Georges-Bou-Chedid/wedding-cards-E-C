@@ -35,7 +35,7 @@ declare global {
 }
 
 const VIDEO_ID = "lY5V4hSLWY8";
-const START_SECONDS = 47;
+const START_SECONDS = 48;
 
 interface MusicPlayerProps {
   /** Call this ref's trigger() after the envelope opens to start playback */
