@@ -17,7 +17,7 @@ import footerBg      from "@/assets/couple-sunset.webp";
 import coupleWalking from "@/assets/couple-walking.webp";
 import coupleBench   from "@/assets/couple-bench.webp";
 import coupleHands   from "@/assets/couple-hands.webp";
-import coupleVenue   from "@/assets/couple-venue2.webp";
+import coupleVenue   from "@/assets/couple-venue.webp";
 
 /*
  * ─── EVENT DETAILS ────────────────────────────────────────────────────────────
