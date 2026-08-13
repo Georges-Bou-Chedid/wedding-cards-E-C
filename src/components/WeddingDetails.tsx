@@ -23,7 +23,7 @@ import coupleVenue   from "@/assets/couple-venue.webp";
  * ─── EVENT DETAILS ────────────────────────────────────────────────────────────
  */
 const COUPLE = { groom: "Elie", bride: "Christine" };
-const WEDDING_DATE_ISO = "2026-09-26T16:00:00";
+const WEDDING_DATE_ISO = "2026-09-26T19:30:00";
 const EVENTS = {
   groomHome: { mapHref: "https://maps.app.goo.gl/hDHh2ML1opzAhm1P7" },
   brideHome: { mapHref: "https://goo.gl/maps/f7JxVts1s2rhytk99?g_st=awb" },
@@ -246,7 +246,7 @@ const WeddingDetails = () => (
     <WeddingTimeline
       events={[
         {
-          time: "4:00 PM",
+          time: "12:00 PM",
           title: "Groom's Home",
           caption: "Elie gets ready with his family",
           photo: coupleWalking,
@@ -254,14 +254,14 @@ const WeddingDetails = () => (
           mapHref: EVENTS.groomHome.mapHref,
         },
         {
-          time: "4:00 PM",
+          time: "12:00 PM",
           title: "Bride's Home",
           caption: "Christine gets ready with her family",
           photo: coupleBench,
           mapHref: EVENTS.brideHome.mapHref,
         },
         {
-          time: "6:00 PM",
+          time: "7:30 PM",
           title: "Ceremony",
           caption: "Notre Dame — El Sayde Church, Fanar",
           photo: coupleHands,
