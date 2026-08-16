@@ -89,6 +89,28 @@ const FullBleed = ({
   </section>
 );
 
+/* ─── Delicate lace-style frame — double border + corner diamonds ───────── */
+const LaceFrame = ({ children }: { children: React.ReactNode }) => (
+  <div className="relative mx-auto max-w-md px-8 py-10 sm:px-10" style={{ background: "white" }}>
+    {/* Outer line */}
+    <div className="pointer-events-none absolute inset-0 border" style={{ borderColor: "hsl(var(--dusty-blue-pale))" }} />
+    {/* Inner line, offset to read as a double "lace" frame */}
+    <div className="pointer-events-none absolute inset-[6px] border" style={{ borderColor: "hsl(var(--dusty-blue-pale))" }} />
+    {/* Corner diamonds */}
+    {[
+      { top: -3, left: -3 }, { top: -3, right: -3 },
+      { bottom: -3, left: -3 }, { bottom: -3, right: -3 },
+    ].map((pos, i) => (
+      <div
+        key={i}
+        className="ornament-diamond pointer-events-none absolute"
+        style={{ ...pos, width: 7, height: 7 }}
+      />
+    ))}
+    <div className="relative z-10">{children}</div>
+  </div>
+);
+
 /* ═══════════════════════════════════════════════════════════════════════════
    WEDDING DETAILS
 ═══════════════════════════════════════════════════════════════════════════ */
@@ -277,19 +299,20 @@ const WeddingDetails = () => (
       ]}
     />
 
-    {/* ── 5. WISH ACCOUNT — standalone, small, solid background matching the countdown ── */}
+    {/* ── 5. WISH ACCOUNT — standalone, small, off-white with a lace-style frame ── */}
     <FullBleed
       src=""
-      fallbackColor="hsl(212,25%,16%)"
+      fallbackColor="hsl(var(--ivory))"
       overlay="transparent"
       minH="auto"
     >
-      <div className="py-12">
-        <GiftRegistry
-          compact
-          variant="onPhoto"
-          coupleLabel={`${COUPLE.groom.toUpperCase()} & ${COUPLE.bride.toUpperCase()}`}
-        />
+      <div className="py-14 px-6">
+        <LaceFrame>
+          <GiftRegistry
+            compact
+            coupleLabel={`${COUPLE.groom.toUpperCase()} & ${COUPLE.bride.toUpperCase()}`}
+          />
+        </LaceFrame>
       </div>
     </FullBleed>
 
