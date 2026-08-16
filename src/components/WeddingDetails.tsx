@@ -250,7 +250,7 @@ const WeddingDetails = () => (
           title: "Groom's Home",
           caption: "Elie gets ready with his family",
           photo: coupleWalking,
-          photoPosition: "center 10%",
+          photoPosition: "center 20%",
           mapHref: EVENTS.groomHome.mapHref,
         },
         {
@@ -303,15 +303,6 @@ const WeddingDetails = () => (
 
         {/* Closing — moved up from the old footer section */}
         <div className="text-center px-6 pt-4">
-          <motion.p
-            style={{ fontFamily: "'Montserrat',sans-serif", fontSize: "0.58rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "1rem" }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Together Forever
-          </motion.p>
           <motion.p
             className="text-white"
             style={{ fontFamily: "var(--font-script)", fontSize: "clamp(2rem,10vw,2.2rem)", lineHeight: 1.05 }}
