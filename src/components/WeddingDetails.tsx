@@ -272,6 +272,7 @@ const WeddingDetails = () => (
           title: "Venue",
           caption: "Zone, Mansourieh",
           photo: coupleVenue,
+          photoPosition: "center 10%",
           mapHref: EVENTS.venue.mapHref,
         },
       ]}
