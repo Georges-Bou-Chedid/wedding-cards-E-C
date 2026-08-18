@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
-/* TODO: paste the deployed Google Apps Script Web App URL here (ends in /exec).
- * See setup instructions provided separately — a plain Google Sheets link won't work. */
-const GOOGLE_SCRIPT_URL = "REPLACE_WITH_NEW_GOOGLE_SCRIPT_URL";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx5dg507u42vWhTJO2DYWmOgae26C1_qA5FQp9DP-2i031-wvb_McUXQW5m4oXx3qPkgA/exec";
 
 type Attendance = "yes" | "no";
 
