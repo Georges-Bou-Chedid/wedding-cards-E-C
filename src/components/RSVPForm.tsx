@@ -68,8 +68,6 @@ const RSVPForm = ({ variant = "default" }: RSVPFormProps) => {
     }
   };
 
-  if (invitedNames.length === 0) return null; // Don't show RSVP if no names in link
-
   const labelColor = onPhoto ? "rgba(255,255,255,0.65)" : "hsl(var(--muted-foreground))";
   const borderColor = onPhoto ? "rgba(255,255,255,0.28)" : "hsl(var(--dusty-blue-pale))";
 
@@ -99,7 +97,7 @@ const RSVPForm = ({ variant = "default" }: RSVPFormProps) => {
         Kindly respond before September 1st, 2026.
       </p>
 
-      {status === "success" ? (
+      {invitedNames.length === 0 ? null : status === "success" ? (
         <motion.div className="flex flex-col items-center gap-4 py-10" initial={{ scale: 0.9 }}>
           <div className="w-14 h-14 rounded-full flex items-center justify-center bg-dusty-blue">
             <Check className="w-7 h-7 text-white" />
